@@ -27,7 +27,6 @@ fragment sectionAboutProject on LandingPage{
     title
     description
     image{
-      alternativeText
       url
     }
   }
@@ -45,12 +44,34 @@ fragment sectionTech on LandingPage{
   }
 }
 
+fragment sectionConcepts on LandingPage{
+  sectionConcepts{
+    title
+    concepts{
+      title
+    }
+  }
+}
+
+fragment sectionModules on LandingPage{
+  sectionModules{
+    title
+    modules{
+      title
+      subtitle
+      description
+    }
+  }
+}
+
 query GET_LANDING_PAGE {
   landingPage {
     ...logo
     ...header
     ...sectionAboutProject
     ...sectionTech
+    ...sectionConcepts
+    ...sectionModules
   }
 }
 
