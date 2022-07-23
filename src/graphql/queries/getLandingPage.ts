@@ -63,7 +63,7 @@ fragment sectionTech on LandingPage {
 fragment sectionConcepts on LandingPage{
   sectionConcepts{
     title
-    concepts{
+    concepts(pagination: {limit: -1}){
       title
     }
   }
