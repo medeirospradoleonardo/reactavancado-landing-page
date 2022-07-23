@@ -1,13 +1,30 @@
 export type TechIcon = {
     title: string
     icon: {
-        url: string
+        data: {
+            attributes: {
+                url: string
+            }
+        }
+    }
+}
+
+export type Image = {
+    data: {
+        attributes: {
+            alternativeText: string
+            url: string
+        }
     }
 }
 
 export type LogoProps = {
-    alternativeText: string
-    url: string
+    data: {
+        attributes: {
+            alternativeText: string
+            url: string
+        }
+    }
 }
 
 export type HeaderProps = {
@@ -17,19 +34,13 @@ export type HeaderProps = {
         label: string
         url: string
     }
-    image: {
-        alternativeText: string
-        url: string
-    }
+    image: Image
 }
 
 export type SectionAboutProjectProps = {
     title: string
     description: string
-    image: {
-        alternativeText: string
-        url: string
-    }
+    image: Image
 }
 
 export type SectionTechProps = {
@@ -71,6 +82,55 @@ export type PricingBoxProps = {
     }
 }
 
+export type SocialLink = {
+    title: string
+    url: string
+}
+
+export type Author = {
+    attributes: {
+        photo: Image
+        name: string
+        role: string
+        socialLinks: SocialLink[]
+        description: string
+    }
+}
+
+export type SectionAboutUsProps = {
+    title: string
+    authors: {
+        data: Author[]
+    }
+}
+
+export type Review = {
+    name: string
+    text: string
+    photo: {
+        data: {
+            attributes: {
+                url: string
+            }
+        }
+    }
+}
+
+export type SectionReviewsProps = {
+    title: string
+    reviews: Review[]
+}
+
+export type Question = {
+    question: string
+    answer: string
+}
+
+export type SectionFaqProps = {
+    title: string
+    questions: Question[]
+}
+
 export type LandingPageProps = {
     logo: LogoProps
     header: HeaderProps
@@ -80,4 +140,7 @@ export type LandingPageProps = {
     sectionModules: SectionModulesProps
     sectionAgenda: SectionAgendaProps
     pricingBox: PricingBoxProps
+    sectionAboutUs: SectionAboutUsProps
+    sectionReviews: SectionReviewsProps
+    sectionFaq: SectionFaqProps
 }

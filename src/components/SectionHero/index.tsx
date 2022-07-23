@@ -40,8 +40,8 @@ const SectionHero = ({ logo, header }: Props) => (
         </S.TextBlock>
 
         <S.Image
-          src={getImageUrl(header.image.url)}
-          alt={header.image.alternativeText}
+          src={getImageUrl(header.image.data.attributes.url)}
+          alt={header.image.data.attributes.alternativeText}
         />
       </S.Content>
     </Container>
